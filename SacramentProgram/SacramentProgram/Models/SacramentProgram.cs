@@ -7,6 +7,8 @@ namespace SacramentProgram.Models
 {
     public class SacramentProgram
     {
+        public int ID { get; set; }
+
         [Required]
         [Display(Name = "Meeting Date")]
         public DateTime MeetingDate { get; set; }
