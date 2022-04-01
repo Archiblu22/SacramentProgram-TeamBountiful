@@ -54,8 +54,10 @@ namespace SacramentPlanner.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,MeetingDate,Presiding,Conducting,Pianist,Chorister,OpeningHymn,Invocation,SacramentHymn,IntermediateHymnIndex,IntermediateHymn,ClosingHymn,Benediction,Announcements")] SacramentMeeting sacramentMeeting)
+        public async Task<IActionResult> Create([Bind("Id,MeetingDate,Presiding,Conducting,Pianist,Chorister,OpeningHymn,Invocation,SacramentHymn,Talks,IntermediateHymnIndex,IntermediateHymn,ClosingHymn,Benediction,Announcements")] SacramentMeeting sacramentMeeting, string talks)
         {
+            var talkList = talks.Split('\n').ToList();
+            sacramentMeeting.Talks = talkList;
             if (ModelState.IsValid)
             {
                 _context.Add(sacramentMeeting);
@@ -78,7 +80,13 @@ namespace SacramentPlanner.Controllers
             {
                 return NotFound();
             }
-            return View(sacramentMeeting);
+            var vm = new SacramentMeetingEditViewModel
+            {
+                SacramentMeeting = sacramentMeeting,
+                Talks = String.Join('\n', sacramentMeeting.Talks)
+            };
+
+            return View(vm);
         }
 
         // POST: SacramentMeetings/Edit/5
@@ -86,13 +94,15 @@ namespace SacramentPlanner.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,MeetingDate,Presiding,Conducting,Pianist,Chorister,OpeningHymn,Invocation,SacramentHymn,IntermediateHymnIndex,IntermediateHymn,ClosingHymn,Benediction,Announcements")] SacramentMeeting sacramentMeeting)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,MeetingDate,Presiding,Conducting,Pianist,Chorister,OpeningHymn,Invocation,SacramentHymn,Talks,IntermediateHymnIndex,IntermediateHymn,ClosingHymn,Benediction,Announcements")] SacramentMeeting sacramentMeeting, string talks)
         {
             if (id != sacramentMeeting.Id)
             {
                 return NotFound();
             }
 
+            var talkList = talks.Split('\n').ToList();
+            sacramentMeeting.Talks = talkList;
             if (ModelState.IsValid)
             {
                 try
