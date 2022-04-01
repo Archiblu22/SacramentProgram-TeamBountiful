@@ -52,6 +52,11 @@
                 <input asp-for="SacramentHymn" class="form-control" />
                 <span asp-validation-for="SacramentHymn" class="text-danger"></span>
             </div>
+            <div class="form-group" style="width:400px;">
+                <label asp-for="Talks" class="control-label"></label>
+                @Html.TextArea("Talks", new { rows=5, cols=50, @class="form-control" })
+                <span class="form-helper">Please use the format: Firstname Lastname - Subject. Follow each entry with a new line.</span>
+            </div>
             <div class="form-group">
                 <label asp-for="IntermediateHymnIndex" class="control-label"></label>
                 <input asp-for="IntermediateHymnIndex" class="form-control" />
