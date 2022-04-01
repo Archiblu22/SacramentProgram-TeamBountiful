@@ -1,4 +1,4 @@
-﻿@model SacramentPlanner.Models.SacramentMeeting
+﻿@model SacramentPlanner.Models.MeetingTalkViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -7,96 +7,96 @@
 <h1>Details</h1>
 
 <div>
-    <h4>SacramentMeeting</h4>
+    <h4>Sacrament Meeting - @Html.DisplayFor(model => model.SacramentMeeting.MeetingDate)</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MeetingDate)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.MeetingDate)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MeetingDate)
+            @Html.DisplayFor(model => model.SacramentMeeting.MeetingDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Presiding)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.Presiding)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Presiding)
+            @Html.DisplayFor(model => model.SacramentMeeting.Presiding)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Conducting)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.Conducting)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Conducting)
+            @Html.DisplayFor(model => model.SacramentMeeting.Conducting)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pianist)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.Pianist)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pianist)
+            @Html.DisplayFor(model => model.SacramentMeeting.Pianist)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Chorister)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.Chorister)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Chorister)
+            @Html.DisplayFor(model => model.SacramentMeeting.Chorister)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OpeningHymn)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.OpeningHymn)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OpeningHymn)
+            @Html.DisplayFor(model => model.SacramentMeeting.OpeningHymn)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Invocation)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.Invocation)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Invocation)
+            @Html.DisplayFor(model => model.SacramentMeeting.Invocation)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentHymn)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.SacramentHymn)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentHymn)
+            @Html.DisplayFor(model => model.SacramentMeeting.SacramentHymn)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Talks)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Talks)
+            @Html.Raw(Model.Talks.Replace("\n", "<br />"))
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntermediateHymnIndex)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.IntermediateHymnIndex)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntermediateHymnIndex)
+            @Html.DisplayFor(model => model.SacramentMeeting.IntermediateHymnIndex)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IntermediateHymn)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.IntermediateHymn)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IntermediateHymn)
+            @Html.DisplayFor(model => model.SacramentMeeting.IntermediateHymn)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClosingHymn)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.ClosingHymn)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClosingHymn)
+            @Html.DisplayFor(model => model.SacramentMeeting.ClosingHymn)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Benediction)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.Benediction)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Benediction)
+            @Html.DisplayFor(model => model.SacramentMeeting.Benediction)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Announcements)
+            @Html.DisplayNameFor(model => model.SacramentMeeting.Announcements)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Announcements)
+            @Html.DisplayFor(model => model.SacramentMeeting.Announcements)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.SacramentMeeting.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
