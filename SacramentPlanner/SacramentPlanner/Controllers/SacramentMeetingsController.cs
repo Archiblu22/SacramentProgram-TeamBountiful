@@ -39,8 +39,13 @@ namespace SacramentPlanner.Controllers
             {
                 return NotFound();
             }
+            var vm = new MeetingTalkViewModel
+            {
+                SacramentMeeting = sacramentMeeting,
+                Talks = String.Join('\n', sacramentMeeting.Talks)
+            };
 
-            return View(sacramentMeeting);
+            return View(vm);
         }
 
         // GET: SacramentMeetings/Create
@@ -80,7 +85,7 @@ namespace SacramentPlanner.Controllers
             {
                 return NotFound();
             }
-            var vm = new SacramentMeetingEditViewModel
+            var vm = new MeetingTalkViewModel
             {
                 SacramentMeeting = sacramentMeeting,
                 Talks = String.Join('\n', sacramentMeeting.Talks)

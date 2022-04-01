@@ -1,4 +1,4 @@
-﻿@model SacramentPlanner.Models.SacramentMeetingEditViewModel
+﻿@model SacramentPlanner.Models.MeetingTalkViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<h4>SacramentMeeting</h4>
+<h4>Sacrament Meeting - @Html.DisplayFor(model => model.SacramentMeeting.MeetingDate)</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
