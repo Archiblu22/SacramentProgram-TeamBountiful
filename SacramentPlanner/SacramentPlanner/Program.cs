@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SacramentPlanner.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,17 @@ namespace SacramentPlanner
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var builder = CreateHostBuilder(args);
+            var app = builder.Build();
+
+            // seed database
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                SeedData.Initialize(services);
+            }
+
+            app.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
