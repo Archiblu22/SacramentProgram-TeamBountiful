@@ -11,21 +11,21 @@
 </div>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="col-md-2">
                 @Html.DisplayNameFor(model => model.MeetingDate)
-            </th>
+            </th class="col-md-2">
             <th>
                 @Html.DisplayNameFor(model => model.Presiding)
             </th>
-            <th>
+            <th class="col-md-2">
                 @Html.DisplayNameFor(model => model.Conducting)
             </th>
-            <th>
+            <th class="col-md-5">
                 @Html.DisplayNameFor(model => model.Talks)
             </th>
             @*<th>
@@ -55,7 +55,7 @@
             @*<th>
                 @Html.DisplayNameFor(model => model.Announcements)
             </th>*@
-            <th></th>
+            <th class="col-md-1"></th>
         </tr>
     </thead>
     <tbody>
@@ -101,10 +101,11 @@
                 @Html.DisplayFor(modelItem => item.Announcements)
             </td>*@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">View</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye" data-toggle="tooltip" data-placement="top" title="Details"></i></a>
+                <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash3" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>
             </td>
+
         </tr>
 }
     </tbody>
