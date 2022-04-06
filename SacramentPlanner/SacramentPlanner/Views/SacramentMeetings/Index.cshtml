@@ -71,7 +71,7 @@
                 @Html.DisplayFor(modelItem => item.Conducting)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Talks)
+                @Html.Raw(String.Join("<br />", item.Talks))
             </td>
             @*<td>
                 @Html.DisplayFor(modelItem => item.Chorister)
@@ -101,8 +101,8 @@
                 @Html.DisplayFor(modelItem => item.Announcements)
             </td>*@
             <td>
+                <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye" data-toggle="tooltip" data-placement="top" title="Program View"></i></a>
                 <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square" data-toggle="tooltip" data-placement="top" title="Edit"></i></a>
-                <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye" data-toggle="tooltip" data-placement="top" title="Details"></i></a>
                 <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash3" data-toggle="tooltip" data-placement="top" title="Delete"></i></a>
             </td>
 
