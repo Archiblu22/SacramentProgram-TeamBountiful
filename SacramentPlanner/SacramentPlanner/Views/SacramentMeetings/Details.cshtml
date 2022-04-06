@@ -4,97 +4,111 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
 
-<div>
-    <h4>Sacrament Meeting - @Html.DisplayFor(model => model.SacramentMeeting.MeetingDate)</h4>
+<div class="sacrament-container">
+    <h5>Sacrament Meeting - @Html.DisplayFor(model => model.SacramentMeeting.MeetingDate)</h5>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.MeetingDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.MeetingDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.Presiding)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.Presiding)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.Conducting)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.Conducting)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.Pianist)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.Pianist)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.Chorister)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.Chorister)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.OpeningHymn)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.OpeningHymn)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.Invocation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.Invocation)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.SacramentHymn)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.SacramentHymn)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Talks)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.Raw(Model.Talks.Replace("\n", "<br />"))
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.IntermediateHymnIndex)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.IntermediateHymnIndex)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.IntermediateHymn)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.IntermediateHymn)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.ClosingHymn)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.ClosingHymn)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.Benediction)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.Benediction)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SacramentMeeting.Announcements)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SacramentMeeting.Announcements)
-        </dd>
-    </dl>
+
+    
+    <div class="row">
+        
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.Presiding)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.Presiding)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.Conducting)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.Conducting)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.Pianist)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.Pianist)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.Chorister)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.Chorister)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.OpeningHymn)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.OpeningHymn)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.Invocation)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.Invocation)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.SacramentHymn)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.SacramentHymn)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.Talks)
+            </h5>
+            <p class = "right">
+                @Html.Raw(Model.Talks.Replace("\n", "<br />"))
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.IntermediateHymn)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.IntermediateHymn)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.ClosingHymn)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.ClosingHymn)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.Benediction)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.Benediction)
+            </p>
+        </div>
+        <div class="rows">
+            <h5 class = "left">
+                @Html.DisplayNameFor(model => model.SacramentMeeting.Announcements)
+            </h5>
+            <p class = "right">
+                @Html.DisplayFor(model => model.SacramentMeeting.Announcements)
+            </p>
+           </div>
+    </div>
 </div>
 <div>
     <a asp-action="Index" class="btn btn-secondary">Back to List</a> |
