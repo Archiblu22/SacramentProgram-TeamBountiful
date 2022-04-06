@@ -37,6 +37,10 @@ a.navbar-brand {
     padding: 1.5rem 0;
 }
 
+.col-md-4 {
+    max-width: 40%;
+}
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
