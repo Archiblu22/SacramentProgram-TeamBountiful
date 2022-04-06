@@ -8,10 +8,7 @@
 <div class="sacrament-container">
     <h5>Sacrament Meeting - @Html.DisplayFor(model => model.SacramentMeeting.MeetingDate)</h5>
     <hr />
-
-    
     <div class="row">
-        
         <div class="rows">
             <h5 class = "left">
                 @Html.DisplayNameFor(model => model.SacramentMeeting.Presiding)
@@ -68,22 +65,28 @@
                 @Html.DisplayFor(model => model.SacramentMeeting.SacramentHymn)
             </p>
         </div>
-        <div class="rows">
-            <h5 class = "left">
-                @Html.DisplayNameFor(model => model.Talks)
-            </h5>
-            <p class = "right">
-                @Html.Raw(Model.Talks.Replace("\n", "<br />"))
-            </p>
-        </div>
-        <div class="rows">
-            <h5 class = "left">
-                @Html.DisplayNameFor(model => model.SacramentMeeting.IntermediateHymn)
-            </h5>
-            <p class = "right">
-                @Html.DisplayFor(model => model.SacramentMeeting.IntermediateHymn)
-            </p>
-        </div>
+        @for(int i = 0; i < Model.SacramentMeeting.Talks.Count; i++)
+        {
+            if (Model.SacramentMeeting.IntermediateHymnIndex == i)
+            {
+                <div class="rows">
+                    <h5 class = "left">
+                        @Html.DisplayNameFor(model => model.SacramentMeeting.IntermediateHymn)
+                    </h5>
+                    <p class = "right">
+                        @Html.DisplayFor(model => model.SacramentMeeting.IntermediateHymn)
+                    </p>
+                </div>
+            }
+            <div class="rows">
+                <h5 class = "left">
+                    Speaker
+                </h5>
+                <p class = "right">
+                    @Html.Raw(Model.SacramentMeeting.Talks.ElementAt(i))
+                </p>
+            </div>
+        }
         <div class="rows">
             <h5 class = "left">
                 @Html.DisplayNameFor(model => model.SacramentMeeting.ClosingHymn)
@@ -100,14 +103,14 @@
                 @Html.DisplayFor(model => model.SacramentMeeting.Benediction)
             </p>
         </div>
-        <div class="rows">
-            <h5 class = "left">
-                @Html.DisplayNameFor(model => model.SacramentMeeting.Announcements)
-            </h5>
-            <p class = "right">
-                @Html.DisplayFor(model => model.SacramentMeeting.Announcements)
-            </p>
-           </div>
+    </div>
+    <div class="announcements">
+        <h5 class="text-center">
+            @Html.DisplayNameFor(model => model.SacramentMeeting.Announcements)
+        </h5>
+        <p class="text-center">
+            @Html.Raw(Model.SacramentMeeting.Announcements.Replace("\n", "<br />"))
+        </p>
     </div>
 </div>
 <div>
