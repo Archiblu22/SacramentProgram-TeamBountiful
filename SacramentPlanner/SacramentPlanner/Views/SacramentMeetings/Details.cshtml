@@ -109,7 +109,7 @@
             @Html.DisplayNameFor(model => model.SacramentMeeting.Announcements)
         </h5>
         <p class="text-center">
-            @Html.Raw(Model.SacramentMeeting.Announcements.Replace("\n", "<br />"))
+            @Html.Raw(Model.SacramentMeeting.Announcements?.Replace("\n", "<br />"))
         </p>
     </div>
 </div>
